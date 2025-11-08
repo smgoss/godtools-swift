@@ -66,13 +66,6 @@ class BaseFlowTests: XCTestCase {
                 
         assertIfInitialScreenDoesntExist()
     }
-
-    func launchAppWithoutInitialScreen(flowDeepLinkUrl: String) {
-        self.app = Self.getNewApp(flowDeepLinkUrl: flowDeepLinkUrl)
-        self.flowDeepLinkUrl = flowDeepLinkUrl
-        self.initialScreen = nil
-        app.launch()
-    }
 }
 
 // MARK: - Screen Query and Assertion

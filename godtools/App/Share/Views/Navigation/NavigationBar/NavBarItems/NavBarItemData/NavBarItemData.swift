@@ -63,16 +63,9 @@ class NavBarItemData {
         }
         
         if #available(iOS 26, *) {
-            // Attempt to disable the new shared/liquid background effect introduced in iOS 18
-            // using selectors to stay compatible with older SDKs that don't compile these symbols.
-            let hideSelector = NSSelectorFromString("setHidesSharedBackground:")
-            if buttonItem.responds(to: hideSelector) {
-                _ = (buttonItem as NSObject).perform(hideSelector, with: NSNumber(value: true))
-            }
-            let sharesSelector = NSSelectorFromString("setSharesBackground:")
-            if buttonItem.responds(to: sharesSelector) {
-                _ = (buttonItem as NSObject).perform(sharesSelector, with: NSNumber(value: false))
-            }
+            // This disables the liquid glass effect on UINavigation Button Items. ~Levi
+            buttonItem.hidesSharedBackground = true
+            buttonItem.sharesBackground = false
         }
         
         return buttonItem
