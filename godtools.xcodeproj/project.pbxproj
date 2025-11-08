@@ -879,7 +879,7 @@
 				DEVELOPMENT_TEAM = DQ48D9BF2V;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = DQ48D9BF2V;
 				DISPLAY_NAME = "GT-Analytics";
-				INFOPLIST_FILE = godtools/Info.plist;
+				INFOPLIST_FILE = godtools/Info-ATS-Debug.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
