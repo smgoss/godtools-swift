@@ -5,6 +5,7 @@ name: Launch to tool details via first spotlight tool
     stopApp: true
 - runFlow: dismiss_onboarding.yaml
 - openLink: "godtools://org.cru.godtools/dashboard/tools"
+- runFlow: dismiss_open_app_prompt.yaml
 - assertVisible:
     id: "Dashboard Tools"
 - tapOn:

@@ -1,14 +1,17 @@
 appId: org.cru.godtools.beta
 name: Launch to lesson (Lesson Testing lesson1)
+# clearState: true ensures the swipe-tutorial overlay reliably shows on
+# first open (it is gated by LessonSwipeTutorialViewedRepository). Without
+# clearState, the second test in the suite would not see it. The trade-off
+# is that each test downloads the lesson translation files again.
+#
+# This helper does NOT assert "Lesson" because the swipe-tutorial overlay
+# covers the lesson screen on first open. Downstream flows decide whether
+# to dismiss the tutorial first or assert against the tutorial directly.
 ---
 - launchApp:
+    clearState: true
     stopApp: true
 - runFlow: dismiss_onboarding.yaml
 - openLink: "godtools://org.cru.godtools/tool/lesson/lesson1/en"
-- runFlow:
-    when:
-      visible: "Open"
-    commands:
-      - tapOn: "Open"
-- assertVisible:
-    id: "Lesson"
+- runFlow: dismiss_open_app_prompt.yaml

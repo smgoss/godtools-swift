@@ -1,0 +1,18 @@
+appId: org.cru.godtools.beta
+name: Dismiss the iOS "Open in app" confirmation if present
+# Triggered by openLink on iOS — Springboard surfaces a system alert
+# ("Open in 'GT-Stage'?") with Cancel/Open buttons on top of the app's
+# current screen. Tapping a bare "Open" matches both the dialog and any
+# "Open" buttons on the underlying screen (e.g. tool cards on the
+# Dashboard Favorites screen). Anchor by `rightOf: Cancel` — only the
+# system alert pairs Open beside a Cancel button.
+---
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Cancel"
+    commands:
+      - tapOn:
+          text: "Open"
+          rightOf:
+            text: "Cancel"

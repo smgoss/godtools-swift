@@ -122,13 +122,10 @@ def emit_flow(resource: dict, translation: dict | None, manifest_pages: list[str
     lines.append("- runFlow: ../../../helpers/dismiss_onboarding.yaml")
     lines.append(f"- openLink: {json.dumps(deeplink)}")
 
-    # Permission/dialog handling on first deep-link
-    lines.append("- runFlow:")
-    lines.append("    when:")
-    lines.append("      platform: iOS")
-    lines.append('      visible: "Open"')
-    lines.append("    commands:")
-    lines.append('      - tapOn: "Open"')
+    # Permission/dialog handling on first deep-link. The shared helper
+    # disambiguates the system "Open in 'GT-Stage'?" alert's Open button
+    # from any "Open" buttons on the underlying screen.
+    lines.append("- runFlow: ../../../helpers/dismiss_open_app_prompt.yaml")
 
     # Assert the screen id matching the resource type, so a regression that
     # silently routes the deep link elsewhere fails fast instead of hiding

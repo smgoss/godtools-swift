@@ -3,16 +3,15 @@ name: Favorites - favorite a tool then view all favorites
 tags:
   - favorites
   - smoke
+# After favoriting a tool from the Tool Details screen and tapping back,
+# the app surfaces the Dashboard Favorites tab (not the Tools tab where
+# we entered from), so the View All button is reachable directly.
 ---
 - runFlow: ../../helpers/launch_to_tool_details.yaml
 - tapOn:
     id: "Toggle Tool Favorite"
 - tapOn:
     id: "Tool Details Nav Back"
-- assertVisible:
-    id: "Dashboard Tools"
-- tapOn:
-    id: "Dashboard Tab Favorites"
 - assertVisible:
     id: "Dashboard Favorites"
 - tapOn:

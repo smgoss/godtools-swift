@@ -9,12 +9,7 @@ tags:
     stopApp: true
 - runFlow: ../../../helpers/dismiss_onboarding.yaml
 - openLink: "godtools://org.cru.godtools/tool/tract/spiritfilledlife/en"
-- runFlow:
-    when:
-      platform: iOS
-      visible: "Open"
-    commands:
-      - tapOn: "Open"
+- runFlow: ../../../helpers/dismiss_open_app_prompt.yaml
 - assertVisible:
     id: "Tract"
 - assertVisible: "Have You Made the Wonderful Discovery of the Spirit-Filled Life?"

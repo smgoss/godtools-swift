@@ -5,10 +5,6 @@ name: Launch to articles (Questions About God article tool)
     stopApp: true
 - runFlow: dismiss_onboarding.yaml
 - openLink: "godtools://org.cru.godtools/tool/article/es/en"
-- runFlow:
-    when:
-      visible: "Open"
-    commands:
-      - tapOn: "Open"
+- runFlow: dismiss_open_app_prompt.yaml
 - assertVisible:
     id: "Articles"

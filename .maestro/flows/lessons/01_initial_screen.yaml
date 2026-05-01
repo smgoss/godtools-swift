@@ -5,3 +5,11 @@ tags:
   - smoke
 ---
 - runFlow: ../../helpers/launch_to_lesson.yaml
+- runFlow:
+    when:
+      visible:
+        id: "Lesson Swipe Tutorial"
+    commands:
+      - tapOn: "Got it"
+- assertVisible:
+    id: "Lesson"

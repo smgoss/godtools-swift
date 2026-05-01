@@ -5,5 +5,6 @@ name: Launch to dashboard favorites
     stopApp: true
 - runFlow: dismiss_onboarding.yaml
 - openLink: "godtools://org.cru.godtools/dashboard/favorites"
+- runFlow: dismiss_open_app_prompt.yaml
 - assertVisible:
     id: "Dashboard Favorites"

@@ -5,10 +5,6 @@ name: Launch to Knowing God Personally tract (training-capable)
     stopApp: true
 - runFlow: dismiss_onboarding.yaml
 - openLink: "godtools://org.cru.godtools/tool/tract/kgp/en"
-- runFlow:
-    when:
-      visible: "Open"
-    commands:
-      - tapOn: "Open"
+- runFlow: dismiss_open_app_prompt.yaml
 - assertVisible:
     id: "Tract"
