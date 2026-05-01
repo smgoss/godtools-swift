@@ -120,8 +120,11 @@ class AccessibilityStrings {
         case toolsCategoryFilter = "Tools Category Filter"
         case toolsLanguageFilter = "Tools Language Filter"
         case toolSettings = "Tool Settings"
+        case toolSettingsPrimaryLanguage = "Tool Settings Primary Language"
+        case toolSettingsParallelLanguage = "Tool Settings Parallel Language"
         case trainingTips = "Training Tips"
         case tutorial = "Tutorial"
+        case viewAllFavoriteTools = "View All Favorite Tools"
         case watchOnboardingTutorialVideo = "Watch Onboarding Tutorial Video Button"
         
         static func getToolButtonAccessibility(toolButton: Button, toolName: Button.ToolName) -> String {

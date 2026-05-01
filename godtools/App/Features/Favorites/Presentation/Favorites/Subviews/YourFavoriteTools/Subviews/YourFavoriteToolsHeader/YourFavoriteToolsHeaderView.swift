@@ -37,14 +37,15 @@ struct YourFavoriteToolsHeaderView: View {
                 Button(action: {
 
                     viewModel.viewAllFavoriteToolsTapped()
-                    
+
                 }) {
-                    
+
                     Text(viewModel.viewAllFavoriteToolsButtonTitle)
                         .font(FontLibrary.sfProTextRegular.font(size: 13))
                         .foregroundColor(ColorPalette.gtBlue.color)
                         .frame(alignment: .bottom)
                 }
+                .accessibilityIdentifier(AccessibilityStrings.Button.viewAllFavoriteTools.id)
                 .padding([.trailing], 20)
                 .padding([.bottom], 2)
             }

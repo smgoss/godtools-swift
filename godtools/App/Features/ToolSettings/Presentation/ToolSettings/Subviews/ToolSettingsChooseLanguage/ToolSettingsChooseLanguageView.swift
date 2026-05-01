@@ -41,7 +41,8 @@ struct ToolSettingsChooseLanguageView: View {
                     .onTapGesture {
                         viewModel.primaryLanguageTapped()
                     }
-                
+                    .accessibilityIdentifier(AccessibilityStrings.Button.toolSettingsPrimaryLanguage.id)
+
                 Button(action: {
                     viewModel.swapLanguageTapped()
                 }) {
@@ -52,11 +53,12 @@ struct ToolSettingsChooseLanguageView: View {
                         ImageCatalog.toolSettingsSwapLanguage.image
                     }
                 }
-                
+
                 ToolSettingsLanguageDropDownView(title: viewModel.parallelLanguageTitle)
                     .onTapGesture {
                         viewModel.parallelLanguageTapped()
                     }
+                    .accessibilityIdentifier(AccessibilityStrings.Button.toolSettingsParallelLanguage.id)
             }
             .background(Color(.sRGB, red: 245 / 256, green: 245 / 256, blue: 245 / 256, opacity: 1))
             .cornerRadius(6)
