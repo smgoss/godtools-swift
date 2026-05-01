@@ -15,6 +15,8 @@ tags:
       visible: "Open"
     commands:
       - tapOn: "Open"
+- assertVisible:
+    id: "Tract"
 - assertVisible: "The Four Fantastic Facts"
 - assertVisible: "The Four Fantastic Facts is a tool to help explain the gospel to children"
 - takeScreenshot: "${SNAPSHOT_DIR}/fantasticfacts/00-00-title-json"

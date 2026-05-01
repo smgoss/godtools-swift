@@ -15,6 +15,8 @@ tags:
       visible: "Open"
     commands:
       - tapOn: "Open"
+- assertVisible:
+    id: "Tract"
 - assertVisible: "Life With Him"
 - assertVisible: "Life With Him explains how to have a relationship with God through Jesus Christ"
 - takeScreenshot: "${SNAPSHOT_DIR}/lifewithhim/00-00-title-json"

@@ -15,6 +15,8 @@ tags:
       visible: "Open"
     commands:
       - tapOn: "Open"
+- assertVisible:
+    id: "Choose Your Own Adventure"
 - assertVisible: "Conversation Starters"
 - takeScreenshot: "${SNAPSHOT_DIR}/convostarters/00-intro-json"
 - swipe:

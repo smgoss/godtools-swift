@@ -130,6 +130,20 @@ def emit_flow(resource: dict, translation: dict | None, manifest_pages: list[str
     lines.append("    commands:")
     lines.append('      - tapOn: "Open"')
 
+    # Assert the screen id matching the resource type, so a regression that
+    # silently routes the deep link elsewhere fails fast instead of hiding
+    # behind name-text matches that may overlap across screens.
+    SCREEN_ID_BY_TYPE = {
+        "tract": "Tract",
+        "lesson": "Lesson",
+        "cyoa": "Choose Your Own Adventure",
+        "article": "Articles",
+    }
+    screen_id = SCREEN_ID_BY_TYPE.get(rtype)
+    if screen_id:
+        lines.append("- assertVisible:")
+        lines.append(f"    id: {json.dumps(screen_id)}")
+
     # Assert resource title appears - real content
     lines.append(f"- assertVisible: {yaml_str(name)}")
 

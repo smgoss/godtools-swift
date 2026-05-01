@@ -15,6 +15,8 @@ tags:
       visible: "Open"
     commands:
       - tapOn: "Open"
+- assertVisible:
+    id: "Lesson"
 - assertVisible: "How to start getting to know your neighbors"
 - takeScreenshot: "${SNAPSHOT_DIR}/lessonneighbor/00-01-title-json"
 - swipe:

@@ -15,6 +15,8 @@ tags:
       visible: "Open"
     commands:
       - tapOn: "Open"
+- assertVisible:
+    id: "Tract"
 - assertVisible: "Connecting With God"
 - takeScreenshot: "${SNAPSHOT_DIR}/connectingwithgod/00-00-title-json"
 - swipe:

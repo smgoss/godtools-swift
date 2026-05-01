@@ -15,6 +15,8 @@ tags:
       visible: "Open"
     commands:
       - tapOn: "Open"
+- assertVisible:
+    id: "Choose Your Own Adventure"
 - assertVisible: "Seen. Known. Loved."
 - assertVisible: "People give and receive love in different ways"
 - takeScreenshot: "${SNAPSHOT_DIR}/skltest/00-00-json"

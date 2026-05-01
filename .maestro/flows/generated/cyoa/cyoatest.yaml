@@ -15,6 +15,8 @@ tags:
       visible: "Open"
     commands:
       - tapOn: "Open"
+- assertVisible:
+    id: "Choose Your Own Adventure"
 - assertVisible: "Choose Your Own Adventure"
 - takeScreenshot: "${SNAPSHOT_DIR}/cyoatest/00-intro-json"
 - swipe:
