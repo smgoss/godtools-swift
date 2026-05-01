@@ -1,0 +1,25 @@
+appId: org.cru.godtools.beta
+name: Tool screen share - tutorial → Generate QR Code → creating session
+tags:
+  - tool_screen_share
+---
+- runFlow: ../../helpers/launch_to_tract.yaml
+- tapOn:
+    id: "Tool Settings"
+- assertVisible:
+    id: "Tool Settings"
+- tapOn:
+    id: "Share Screen"
+- assertVisible:
+    id: "Tool Screen Share Tutorial"
+- repeat:
+    while:
+      visible:
+        id: "Continue"
+    commands:
+      - tapOn:
+          id: "Continue"
+- tapOn:
+    id: "Generate QR Code"
+- assertVisible:
+    id: "Creating Tool Screen Share Session"
