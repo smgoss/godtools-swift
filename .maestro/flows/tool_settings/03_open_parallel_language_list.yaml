@@ -1,0 +1,14 @@
+appId: org.cru.godtools.beta
+name: Tool Settings - open parallel language list
+tags:
+  - tool_settings
+---
+- runFlow: ../../helpers/launch_to_tract.yaml
+- tapOn:
+    id: "Tool Settings"
+- assertVisible:
+    id: "Tool Settings"
+- tapOn:
+    id: "Tool Settings Parallel Language"
+- assertVisible:
+    id: "Tool Settings Tool Languages List"

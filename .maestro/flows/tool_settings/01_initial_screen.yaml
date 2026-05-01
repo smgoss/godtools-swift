@@ -1,0 +1,11 @@
+appId: org.cru.godtools.beta
+name: Tool Settings - initial screen
+tags:
+  - tool_settings
+  - smoke
+---
+- runFlow: ../../helpers/launch_to_tract.yaml
+- tapOn:
+    id: "Tool Settings"
+- assertVisible:
+    id: "Tool Settings"

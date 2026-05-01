@@ -1,0 +1,21 @@
+appId: org.cru.godtools.beta
+name: Favorites - favorite a tool then view all favorites
+tags:
+  - favorites
+  - smoke
+---
+- runFlow: ../../helpers/launch_to_tool_details.yaml
+- tapOn:
+    id: "Toggle Tool Favorite"
+- tapOn:
+    id: "Tool Details Nav Back"
+- assertVisible:
+    id: "Dashboard Tools"
+- tapOn:
+    id: "Dashboard Tab Favorites"
+- assertVisible:
+    id: "Dashboard Favorites"
+- tapOn:
+    id: "View All Favorite Tools"
+- assertVisible:
+    id: "All Your Favorite Tools"
