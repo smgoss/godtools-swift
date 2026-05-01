@@ -1,0 +1,56 @@
+appId: org.cru.godtools.beta
+name: TRACT - 90 Minutes Between the Lines (90minutes)
+tags:
+  - generated
+  - tract
+  - tool-90minutes
+---
+- launchApp:
+    stopApp: true
+- runFlow: ../../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/tool/tract/90minutes/en"
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible: "90 Minutes Between the Lines"
+- assertVisible: "90 Minutes Between the Lines © 2024 Athletes in Action"
+- takeScreenshot: "${SNAPSHOT_DIR}/90minutes/00-00-title-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/90minutes/01-01-pele-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/90minutes/02-02-love-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/90minutes/03-03-fouls-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/90minutes/04-04-sin-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/90minutes/05-05-jesus-jersey-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/90minutes/06-06-receive-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/90minutes/07-07-circles-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/90minutes/08-08-growth-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/90minutes/09-09-next-json"

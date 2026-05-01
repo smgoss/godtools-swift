@@ -1,0 +1,14 @@
+appId: org.cru.godtools.beta
+name: Menu - navigate to copyright info
+tags:
+  - menu
+---
+- runFlow: ../../helpers/launch_to_menu.yaml
+- scrollUntilVisible:
+    element:
+      id: "Copyright Info"
+    direction: DOWN
+- tapOn:
+    id: "Copyright Info"
+- assertVisible:
+    id: "Copyright Info"

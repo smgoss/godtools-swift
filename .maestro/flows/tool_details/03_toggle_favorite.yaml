@@ -1,0 +1,14 @@
+appId: org.cru.godtools.beta
+name: Tool details - toggle tool favorite
+tags:
+  - tool_details
+---
+- runFlow: ../../helpers/launch_to_tool_details.yaml
+- tapOn:
+    id: "Toggle Tool Favorite"
+- assertVisible:
+    id: "Tool Details"
+- tapOn:
+    id: "Toggle Tool Favorite"
+- assertVisible:
+    id: "Tool Details"

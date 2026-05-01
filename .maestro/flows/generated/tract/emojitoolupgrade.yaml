@@ -1,0 +1,44 @@
+appId: org.cru.godtools.beta
+name: TRACT - Emoji Survey (emojitoolupgrade)
+tags:
+  - generated
+  - tract
+  - tool-emojitoolupgrade
+---
+- launchApp:
+    stopApp: true
+- runFlow: ../../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/tool/tract/emojitoolupgrade/en"
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible: "Emoji Survey"
+- assertVisible: "Emoji Survey is a fun way to have a spiritual conversation"
+- takeScreenshot: "${SNAPSHOT_DIR}/emojitoolupgrade/00-02-emojitool-xml"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/emojitoolupgrade/01-01-home-xml"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/emojitoolupgrade/02-03-emojitool-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/emojitoolupgrade/03-04-emojitool-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/emojitoolupgrade/04-05-emojitool-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/emojitoolupgrade/05-06-emojitool-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/emojitoolupgrade/06-07-emojitool-json"

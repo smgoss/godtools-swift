@@ -1,0 +1,7 @@
+appId: org.cru.godtools.beta
+name: Learn to share - initial tool details
+tags:
+  - learn_to_share
+  - smoke
+---
+- runFlow: ../../helpers/launch_to_tool_details.yaml

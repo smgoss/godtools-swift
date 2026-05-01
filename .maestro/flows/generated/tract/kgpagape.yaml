@@ -1,0 +1,59 @@
+appId: org.cru.godtools.beta
+name: TRACT - Knowing God Personally (kgpagape)
+tags:
+  - generated
+  - tract
+  - tool-kgpagape
+---
+- launchApp:
+    stopApp: true
+- runFlow: ../../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/tool/tract/kgpagape/en"
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible: "Knowing God Personally"
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpagape/00-00-title-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpagape/01-01-firstpoint-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpagape/02-02-secondpoint-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpagape/03-03-thirdpoint-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpagape/04-04-fourthpoint-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpagape/05-05-circles-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpagape/06-06-prayer-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpagape/07-07-whathappens-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpagape/08-08-howcanyoubesure-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpagape/09-09-howtogrow-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpagape/10-10-resources-json"

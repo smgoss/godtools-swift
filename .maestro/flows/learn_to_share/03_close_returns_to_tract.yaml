@@ -1,0 +1,14 @@
+appId: org.cru.godtools.beta
+name: Learn to share - close returns to tract
+tags:
+  - learn_to_share
+---
+- runFlow: ../../helpers/launch_to_spotlight_tool_details.yaml
+- tapOn:
+    id: "Learn To Share"
+- assertVisible:
+    id: "learnToShareTool"
+- tapOn:
+    id: "Close"
+- assertVisible:
+    id: "Tract"

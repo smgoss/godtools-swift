@@ -1,0 +1,7 @@
+appId: org.cru.godtools.beta
+name: Onboarding - initial screen
+tags:
+  - onboarding
+  - smoke
+---
+- runFlow: ../../helpers/launch_to_onboarding.yaml

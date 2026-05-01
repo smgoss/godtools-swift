@@ -1,0 +1,13 @@
+appId: org.cru.godtools.beta
+name: Launch to menu
+---
+- launchApp:
+    stopApp: true
+- runFlow: dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/dashboard/tools"
+- assertVisible:
+    id: "Dashboard Tools"
+- tapOn:
+    id: "Menu"
+- assertVisible:
+    id: "Menu"

@@ -1,0 +1,7 @@
+appId: org.cru.godtools.beta
+name: Choose app language - initial screen
+tags:
+  - choose_app_language
+  - smoke
+---
+- runFlow: ../../helpers/launch_to_app_languages.yaml

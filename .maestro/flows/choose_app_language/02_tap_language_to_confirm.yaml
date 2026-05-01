@@ -1,0 +1,10 @@
+appId: org.cru.godtools.beta
+name: Choose app language - tap language to confirm
+tags:
+  - choose_app_language
+---
+- runFlow: ../../helpers/launch_to_app_languages.yaml
+- tapOn:
+    id: "App Language List Item"
+- assertVisible:
+    id: "Confirm App Language"

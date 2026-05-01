@@ -1,0 +1,10 @@
+appId: org.cru.godtools.beta
+name: Tool details - navigate back to dashboard tools
+tags:
+  - tool_details
+---
+- runFlow: ../../helpers/launch_to_tool_details.yaml
+- tapOn:
+    id: "Tool Details Nav Back"
+- assertVisible:
+    id: "Dashboard Tools"

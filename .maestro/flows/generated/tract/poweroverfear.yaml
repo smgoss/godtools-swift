@@ -1,0 +1,35 @@
+appId: org.cru.godtools.beta
+name: TRACT - Power over Fear (poweroverfear)
+tags:
+  - generated
+  - tract
+  - tool-poweroverfear
+---
+- launchApp:
+    stopApp: true
+- runFlow: ../../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/tool/tract/poweroverfear/en"
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible: "Power over Fear"
+- takeScreenshot: "${SNAPSHOT_DIR}/poweroverfear/00-open"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/poweroverfear/01-page-1"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/poweroverfear/02-page-2"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/poweroverfear/03-page-3"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/poweroverfear/04-page-4"

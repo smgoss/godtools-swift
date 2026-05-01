@@ -1,0 +1,15 @@
+appId: org.cru.godtools.beta
+name: Launch to onboarding tutorial
+---
+- launchApp:
+    clearState: true
+    stopApp: true
+- openLink: "godtools://org.cru.godtools/ui_tests/onboarding?appLanguageCode=en"
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible:
+    id: "Onboarding Tutorial Screen"

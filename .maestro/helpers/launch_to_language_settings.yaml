@@ -1,0 +1,9 @@
+appId: org.cru.godtools.beta
+name: Launch to language settings
+---
+- launchApp:
+    stopApp: true
+- runFlow: dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/ui_tests/settings/language"
+- assertVisible:
+    id: "Language Settings"

@@ -1,0 +1,10 @@
+appId: org.cru.godtools.beta
+name: Menu - navigate to share a story with us
+tags:
+  - menu
+---
+- runFlow: ../../helpers/launch_to_menu.yaml
+- tapOn:
+    id: "Share A Story With Us"
+- assertVisible:
+    id: "Share A Story With Us"

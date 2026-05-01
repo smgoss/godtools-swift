@@ -1,0 +1,14 @@
+appId: org.cru.godtools.beta
+name: Menu - navigate to terms of use
+tags:
+  - menu
+---
+- runFlow: ../../helpers/launch_to_menu.yaml
+- scrollUntilVisible:
+    element:
+      id: "Terms Of Use"
+    direction: DOWN
+- tapOn:
+    id: "Terms Of Use"
+- assertVisible:
+    id: "Terms Of Use"

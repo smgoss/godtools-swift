@@ -1,0 +1,18 @@
+appId: org.cru.godtools.beta
+name: Tool screen share - close back to tract
+tags:
+  - tool_screen_share
+---
+- runFlow: ../../helpers/launch_to_tract.yaml
+- tapOn:
+    id: "Tool Settings"
+- assertVisible:
+    id: "Tool Settings"
+- tapOn:
+    id: "Share Screen"
+- assertVisible:
+    id: "Tool Screen Share Tutorial"
+- tapOn:
+    id: "Close"
+- assertVisible:
+    id: "Tract"

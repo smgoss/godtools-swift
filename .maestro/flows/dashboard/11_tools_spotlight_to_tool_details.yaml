@@ -1,0 +1,10 @@
+appId: org.cru.godtools.beta
+name: Dashboard - tools spotlight to tool details
+tags:
+  - dashboard
+---
+- runFlow: ../../helpers/launch_to_dashboard_tools.yaml
+- tapOn:
+    id: "Spotlight Tool - .+"
+- assertVisible:
+    id: "Tool Details"

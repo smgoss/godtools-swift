@@ -1,0 +1,10 @@
+appId: org.cru.godtools.beta
+name: Menu - navigate to language settings
+tags:
+  - menu
+---
+- runFlow: ../../helpers/launch_to_menu.yaml
+- tapOn:
+    id: "Language Settings"
+- assertVisible:
+    id: "Language Settings"

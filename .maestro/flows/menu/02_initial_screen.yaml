@@ -1,0 +1,7 @@
+appId: org.cru.godtools.beta
+name: Menu - initial screen
+tags:
+  - menu
+  - smoke
+---
+- runFlow: ../../helpers/launch_to_menu.yaml

@@ -1,0 +1,19 @@
+appId: org.cru.godtools.beta
+name: Tool details - open spotlight tool navigates to tract
+tags:
+  - tool_details
+---
+- launchApp:
+    stopApp: true
+- runFlow: ../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/dashboard/tools"
+- assertVisible:
+    id: "Dashboard Tools"
+- tapOn:
+    id: "Spotlight Tool - .+"
+- assertVisible:
+    id: "Tool Details"
+- tapOn:
+    id: "Open Tool"
+- assertVisible:
+    id: "Tract"

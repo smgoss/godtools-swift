@@ -1,0 +1,35 @@
+appId: org.cru.godtools.beta
+name: TRACT - Satisfied? (sat)
+tags:
+  - generated
+  - tract
+  - tool-sat
+---
+- launchApp:
+    stopApp: true
+- runFlow: ../../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/tool/tract/sat/en"
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible: "Satisfied?"
+- takeScreenshot: "${SNAPSHOT_DIR}/sat/00-open"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/sat/01-page-1"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/sat/02-page-2"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/sat/03-page-3"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/sat/04-page-4"

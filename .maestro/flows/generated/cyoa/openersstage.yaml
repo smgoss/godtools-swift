@@ -1,0 +1,43 @@
+appId: org.cru.godtools.beta
+name: CYOA - Openers (openersstage)
+tags:
+  - generated
+  - cyoa
+  - tool-openersstage
+---
+- launchApp:
+    stopApp: true
+- runFlow: ../../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/tool/cyoa/openersstage/en"
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible: "Openers"
+- takeScreenshot: "${SNAPSHOT_DIR}/openersstage/00-intro-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/openersstage/01-categories-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/openersstage/02-categories-culture-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/openersstage/03-categories-family-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/openersstage/04-categories-spirituality-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/openersstage/05-categories-currentevents-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/openersstage/06-categories-happiness-json"

@@ -1,0 +1,44 @@
+appId: org.cru.godtools.beta
+name: CYOA - Untie the Knots (untietheknots)
+tags:
+  - generated
+  - cyoa
+  - tool-untietheknots
+---
+- launchApp:
+    stopApp: true
+- runFlow: ../../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/tool/cyoa/untietheknots/en"
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible: "Untie the Knots"
+- assertVisible: "Each person has his own different belief background"
+- takeScreenshot: "${SNAPSHOT_DIR}/untietheknots/00-intro-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/untietheknots/01-categories-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/untietheknots/02-categories-buddhist-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/untietheknots/03-categories-ancestor-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/untietheknots/04-categories-catholic-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/untietheknots/05-categories-self-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/untietheknots/06-categories-science-json"

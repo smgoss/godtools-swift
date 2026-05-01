@@ -1,0 +1,7 @@
+appId: org.cru.godtools.beta
+name: Choose Your Own Adventure - initial screen
+tags:
+  - choose_your_own_adventure
+  - smoke
+---
+- runFlow: ../../helpers/launch_to_cyoa.yaml

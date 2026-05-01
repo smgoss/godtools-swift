@@ -1,0 +1,27 @@
+appId: org.cru.godtools.beta
+name: CYOA - Conversation Starters (convostarters)
+tags:
+  - generated
+  - cyoa
+  - tool-convostarters
+---
+- launchApp:
+    stopApp: true
+- runFlow: ../../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/tool/cyoa/convostarters/en"
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible: "Conversation Starters"
+- takeScreenshot: "${SNAPSHOT_DIR}/convostarters/00-intro-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/convostarters/01-categories-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/convostarters/02-category-culture-json"

@@ -1,0 +1,39 @@
+appId: org.cru.godtools.beta
+name: CYOA - Choose Your Own Adventure (cyoatest)
+tags:
+  - generated
+  - cyoa
+  - tool-cyoatest
+---
+- launchApp:
+    stopApp: true
+- runFlow: ../../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/tool/cyoa/cyoatest/en"
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible: "Choose Your Own Adventure"
+- takeScreenshot: "${SNAPSHOT_DIR}/cyoatest/00-intro-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/cyoatest/01-page1-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/cyoatest/02-page-collection-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/cyoatest/03-question1-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/cyoatest/04-question2-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/cyoatest/05-question2-child-json"

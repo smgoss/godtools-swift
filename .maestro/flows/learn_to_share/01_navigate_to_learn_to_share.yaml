@@ -1,0 +1,10 @@
+appId: org.cru.godtools.beta
+name: Learn to share - navigate from tool details
+tags:
+  - learn_to_share
+---
+- runFlow: ../../helpers/launch_to_spotlight_tool_details.yaml
+- tapOn:
+    id: "Learn To Share"
+- assertVisible:
+    id: "learnToShareTool"

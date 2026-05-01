@@ -1,0 +1,36 @@
+appId: org.cru.godtools.beta
+name: LESSON - Lesson Testing (lesson1)
+tags:
+  - generated
+  - lesson
+  - tool-lesson1
+---
+- launchApp:
+    stopApp: true
+- runFlow: ../../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/tool/lesson/lesson1/en"
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible: "Lesson Testing"
+- assertVisible: "Testing out the Lesson Renderer"
+- takeScreenshot: "${SNAPSHOT_DIR}/lesson1/00-open"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/lesson1/01-page-1"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/lesson1/02-page-2"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/lesson1/03-page-3"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/lesson1/04-page-4"

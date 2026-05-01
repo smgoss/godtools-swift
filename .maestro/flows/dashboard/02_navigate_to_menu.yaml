@@ -1,0 +1,10 @@
+appId: org.cru.godtools.beta
+name: Dashboard - navigate to menu
+tags:
+  - dashboard
+---
+- runFlow: ../../helpers/launch_to_dashboard_favorites.yaml
+- tapOn:
+    id: "Menu"
+- assertVisible:
+    id: "Menu"

@@ -1,0 +1,47 @@
+appId: org.cru.godtools.beta
+name: TRACT - Reconciled into God’s Family (kgpreconciled)
+tags:
+  - generated
+  - tract
+  - tool-kgpreconciled
+---
+- launchApp:
+    stopApp: true
+- runFlow: ../../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/tool/tract/kgpreconciled/en"
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible: "Reconciled into God’s Family"
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpreconciled/00-00-title-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpreconciled/01-01-perspective-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpreconciled/02-02-condition-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpreconciled/03-03-godsresponse-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpreconciled/04-04-ourresponse-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpreconciled/05-05-circles-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpreconciled/06-06-prayer-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgpreconciled/07-07-resources-json"

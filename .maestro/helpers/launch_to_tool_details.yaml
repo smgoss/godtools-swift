@@ -1,0 +1,13 @@
+appId: org.cru.godtools.beta
+name: Launch to tool details (four spiritual laws)
+---
+- launchApp:
+    stopApp: true
+- runFlow: dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/dashboard/tools"
+- assertVisible:
+    id: "Dashboard Tools"
+- tapOn:
+    id: "Tool - .+"
+- assertVisible:
+    id: "Tool Details"

@@ -1,0 +1,39 @@
+appId: org.cru.godtools.beta
+name: TRACT - Honor Restored (honorshame)
+tags:
+  - generated
+  - tract
+  - tool-honorshame
+---
+- launchApp:
+    stopApp: true
+- runFlow: ../../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/tool/tract/honorshame/en"
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible: "Honor Restored"
+- takeScreenshot: "${SNAPSHOT_DIR}/honorshame/00-01-honorhome-xml"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/honorshame/01-02-beginning-xml"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/honorshame/02-03-problem-xml"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/honorshame/03-04-solution-xml"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/honorshame/04-05-response-xml"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/honorshame/05-06-result-xml"

@@ -1,0 +1,10 @@
+appId: org.cru.godtools.beta
+name: Menu - navigate to ask a question
+tags:
+  - menu
+---
+- runFlow: ../../helpers/launch_to_menu.yaml
+- tapOn:
+    id: "Ask A Question"
+- assertVisible:
+    id: "Ask A Question"

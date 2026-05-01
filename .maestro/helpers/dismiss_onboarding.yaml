@@ -1,0 +1,14 @@
+appId: org.cru.godtools.beta
+name: Dismiss onboarding if present
+---
+- runFlow:
+    when:
+      visible:
+        id: "Onboarding Tutorial Screen"
+    commands:
+      - tapOn:
+          id: "Continue"
+      - tapOn:
+          id: "Skip"
+      - assertVisible:
+          id: "Dashboard Favorites"

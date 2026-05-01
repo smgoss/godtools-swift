@@ -1,0 +1,7 @@
+appId: org.cru.godtools.beta
+name: Lesson - initial screen
+tags:
+  - lessons
+  - smoke
+---
+- runFlow: ../../helpers/launch_to_lesson.yaml

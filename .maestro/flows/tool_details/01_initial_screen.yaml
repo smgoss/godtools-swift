@@ -1,0 +1,7 @@
+appId: org.cru.godtools.beta
+name: Tool details - initial screen
+tags:
+  - tool_details
+  - smoke
+---
+- runFlow: ../../helpers/launch_to_tool_details.yaml

@@ -1,0 +1,14 @@
+appId: org.cru.godtools.beta
+name: Dashboard - favorites tool details back to favorites
+tags:
+  - dashboard
+---
+- runFlow: ../../helpers/launch_to_dashboard_favorites.yaml
+- tapOn:
+    id: "Tool Details"
+- assertVisible:
+    id: "Tool Details"
+- tapOn:
+    id: "Tool Details Nav Back"
+- assertVisible:
+    id: "Dashboard Favorites"

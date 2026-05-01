@@ -1,0 +1,14 @@
+appId: org.cru.godtools.beta
+name: Launch to choose your own adventure (cyoatest)
+---
+- launchApp:
+    stopApp: true
+- runFlow: dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/tool/cyoa/cyoatest/en"
+- runFlow:
+    when:
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible:
+    id: "Choose Your Own Adventure"

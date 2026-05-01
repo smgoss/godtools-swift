@@ -1,0 +1,36 @@
+appId: org.cru.godtools.beta
+name: ARTICLE - Questions About God (es)
+tags:
+  - generated
+  - article
+  - tool-es
+---
+- launchApp:
+    stopApp: true
+- runFlow: ../../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/tool/article/es/en"
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible: "Questions About God"
+- assertVisible: "How much wood could a woodchuck chuck, if a woodchuck could chuck wood?"
+- takeScreenshot: "${SNAPSHOT_DIR}/es/00-open"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/es/01-page-1"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/es/02-page-2"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/es/03-page-3"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/es/04-page-4"

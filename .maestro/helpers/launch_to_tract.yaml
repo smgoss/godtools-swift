@@ -1,0 +1,17 @@
+appId: org.cru.godtools.beta
+name: Launch to tract via UI (first spotlight tool, expected tract)
+---
+- launchApp:
+    stopApp: true
+- runFlow: dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/dashboard/tools"
+- assertVisible:
+    id: "Dashboard Tools"
+- tapOn:
+    id: "Spotlight Tool - .+"
+- assertVisible:
+    id: "Tool Details"
+- tapOn:
+    id: "Open Tool"
+- assertVisible:
+    id: "Tract"

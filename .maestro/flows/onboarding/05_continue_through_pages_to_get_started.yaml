@@ -1,0 +1,15 @@
+appId: org.cru.godtools.beta
+name: Onboarding - continue through pages until Get Started
+tags:
+  - onboarding
+---
+- runFlow: ../../helpers/launch_to_onboarding.yaml
+- repeat:
+    while:
+      visible:
+        id: "Continue"
+    commands:
+      - tapOn:
+          id: "Continue"
+- assertVisible:
+    id: "Get Started"

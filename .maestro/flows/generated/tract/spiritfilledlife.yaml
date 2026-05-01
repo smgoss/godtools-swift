@@ -1,0 +1,51 @@
+appId: org.cru.godtools.beta
+name: TRACT - Have You Made the Wonderful Discovery of the Spirit-Filled Life? (spiritfilledlife)
+tags:
+  - generated
+  - tract
+  - tool-spiritfilledlife
+---
+- launchApp:
+    stopApp: true
+- runFlow: ../../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/tool/tract/spiritfilledlife/en"
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible: "Have You Made the Wonderful Discovery of the Spirit-Filled Life?"
+- takeScreenshot: "${SNAPSHOT_DIR}/spiritfilledlife/00-00-title-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/spiritfilledlife/01-01-spiritual-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/spiritfilledlife/02-02-worldly-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/spiritfilledlife/03-03-promise-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/spiritfilledlife/04-04-faith-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/spiritfilledlife/05-05-prayer-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/spiritfilledlife/06-06-assurance-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/spiritfilledlife/07-07-walkinspirit-json"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/spiritfilledlife/08-08-spiritualbreathing-json"

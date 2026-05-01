@@ -1,0 +1,9 @@
+appId: org.cru.godtools.beta
+name: Launch to dashboard lessons
+---
+- launchApp:
+    stopApp: true
+- runFlow: dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/dashboard/lessons"
+- assertVisible:
+    id: "Dashboard Lessons"

@@ -1,0 +1,10 @@
+appId: org.cru.godtools.beta
+name: Onboarding - navigate to choose app language
+tags:
+  - onboarding
+---
+- runFlow: ../../helpers/launch_to_onboarding.yaml
+- tapOn:
+    id: "Choose App Language"
+- assertVisible:
+    id: "App Languages"

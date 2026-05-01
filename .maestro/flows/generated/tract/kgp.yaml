@@ -1,0 +1,39 @@
+appId: org.cru.godtools.beta
+name: TRACT - Knowing God Personally (kgp)
+tags:
+  - generated
+  - tract
+  - tool-kgp
+---
+- launchApp:
+    stopApp: true
+- runFlow: ../../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/tool/tract/kgp/en"
+- runFlow:
+    when:
+      platform: iOS
+      visible: "Open"
+    commands:
+      - tapOn: "Open"
+- assertVisible: "Knowing God Personally"
+- takeScreenshot: "${SNAPSHOT_DIR}/kgp/00-01-home-xml"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgp/01-02-firstpoint-xml"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgp/02-03-secondpoint-xml"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgp/03-07-attitudeofyourheart-xml"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgp/04-09-whathappens-xml"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- takeScreenshot: "${SNAPSHOT_DIR}/kgp/05-13-finalpage-xml"

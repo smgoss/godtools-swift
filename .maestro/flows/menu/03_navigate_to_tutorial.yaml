@@ -1,0 +1,10 @@
+appId: org.cru.godtools.beta
+name: Menu - navigate to tutorial
+tags:
+  - menu
+---
+- runFlow: ../../helpers/launch_to_menu.yaml
+- tapOn:
+    id: "Tutorial"
+- assertVisible:
+    id: "Tutorial"

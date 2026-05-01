@@ -1,0 +1,14 @@
+appId: org.cru.godtools.beta
+name: Onboarding - open watch video then close back to tutorial
+tags:
+  - onboarding
+---
+- runFlow: ../../helpers/launch_to_onboarding.yaml
+- tapOn:
+    id: "Watch Onboarding Tutorial Video Button"
+- assertVisible:
+    id: "Watch Onboarding Tutorial Video Screen"
+- tapOn:
+    id: "Close"
+- assertVisible:
+    id: "Onboarding Tutorial Screen"

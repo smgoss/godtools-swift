@@ -1,0 +1,8 @@
+appId: org.cru.godtools.beta
+name: Lesson - swipe tutorial visible on first open
+tags:
+  - lessons
+---
+- runFlow: ../../helpers/launch_to_lesson.yaml
+- assertVisible:
+    id: "Lesson Swipe Tutorial"

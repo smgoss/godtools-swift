@@ -1,0 +1,14 @@
+appId: org.cru.godtools.beta
+name: Menu - navigate to privacy policy
+tags:
+  - menu
+---
+- runFlow: ../../helpers/launch_to_menu.yaml
+- scrollUntilVisible:
+    element:
+      id: "Privacy Policy"
+    direction: DOWN
+- tapOn:
+    id: "Privacy Policy"
+- assertVisible:
+    id: "Privacy Policy"

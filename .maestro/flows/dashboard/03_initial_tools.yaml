@@ -1,0 +1,7 @@
+appId: org.cru.godtools.beta
+name: Dashboard - initial tools
+tags:
+  - dashboard
+  - smoke
+---
+- runFlow: ../../helpers/launch_to_dashboard_tools.yaml

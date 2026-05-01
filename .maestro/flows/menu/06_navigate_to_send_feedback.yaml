@@ -1,0 +1,10 @@
+appId: org.cru.godtools.beta
+name: Menu - navigate to send feedback
+tags:
+  - menu
+---
+- runFlow: ../../helpers/launch_to_menu.yaml
+- tapOn:
+    id: "sendFeedback"
+- assertVisible:
+    id: "Send Feedback"

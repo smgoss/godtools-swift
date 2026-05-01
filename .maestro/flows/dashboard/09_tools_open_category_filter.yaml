@@ -1,0 +1,10 @@
+appId: org.cru.godtools.beta
+name: Dashboard - tools open category filter
+tags:
+  - dashboard
+---
+- runFlow: ../../helpers/launch_to_dashboard_tools.yaml
+- tapOn:
+    id: "Tools Category Filter"
+- assertVisible:
+    id: "Tools Category Filters"

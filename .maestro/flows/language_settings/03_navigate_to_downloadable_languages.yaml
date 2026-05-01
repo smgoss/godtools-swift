@@ -1,0 +1,10 @@
+appId: org.cru.godtools.beta
+name: Language settings - navigate to downloadable languages
+tags:
+  - language_settings
+---
+- runFlow: ../../helpers/launch_to_language_settings.yaml
+- tapOn:
+    id: "Edit Downloaded Languages"
+- assertVisible:
+    id: "Downloadable Languages"

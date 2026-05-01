@@ -1,0 +1,10 @@
+appId: org.cru.godtools.beta
+name: Language settings - navigate to app languages list
+tags:
+  - language_settings
+---
+- runFlow: ../../helpers/launch_to_language_settings.yaml
+- tapOn:
+    id: "Choose App Language"
+- assertVisible:
+    id: "App Languages"

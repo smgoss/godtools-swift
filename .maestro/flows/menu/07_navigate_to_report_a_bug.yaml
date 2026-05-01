@@ -1,0 +1,10 @@
+appId: org.cru.godtools.beta
+name: Menu - navigate to report a bug
+tags:
+  - menu
+---
+- runFlow: ../../helpers/launch_to_menu.yaml
+- tapOn:
+    id: "Report A Bug"
+- assertVisible:
+    id: "Report A Bug"

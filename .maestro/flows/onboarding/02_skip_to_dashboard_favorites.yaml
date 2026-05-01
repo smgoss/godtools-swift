@@ -1,0 +1,12 @@
+appId: org.cru.godtools.beta
+name: Onboarding - skip to dashboard favorites
+tags:
+  - onboarding
+---
+- runFlow: ../../helpers/launch_to_onboarding.yaml
+- tapOn:
+    id: "Continue"
+- tapOn:
+    id: "Skip"
+- assertVisible:
+    id: "Dashboard Favorites"
