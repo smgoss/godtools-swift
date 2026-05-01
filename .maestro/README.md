@@ -36,9 +36,30 @@ brew install maestro
 curl -fsSL "https://get.maestro.mobile.dev" | bash
 ```
 
+## Build for the simulator
+
+The `GodToolsShared` xcframework ships only `ios-arm64` and `ios-arm64-simulator` slices (no x86_64). Building with `xcodebuild -destination 'generic/platform=iOS Simulator'` will fail at link with `Undefined symbols for architecture x86_64: _OBJC_CLASS_$_GTSAccordion` because xcodebuild builds *all* simulator architectures for a generic destination. Always target a **specific simulator** instead — that resolves to the host's native arch (arm64 on Apple Silicon):
+
+```sh
+# pick a booted simulator's UDID
+xcrun simctl list devices booted
+
+# build (replace UDID with one from the line above)
+xcodebuild -project godtools.xcodeproj \
+           -scheme GodTools-Staging \
+           -destination 'platform=iOS Simulator,id=<UDID>' \
+           build
+
+# install on that simulator
+xcrun simctl install booted \
+  ~/Library/Developer/Xcode/DerivedData/godtools-*/Build/Products/Staging-iphonesimulator/godtools.app
+```
+
+The `-Staging` scheme builds the bundle id `org.cru.godtools.beta` that `.maestro/config.yaml` targets.
+
 ## Run
 
-Boot a simulator and install the godtools app first (build & run from Xcode at least once for the `org.cru.godtools` bundle). Then from the repo root:
+Once the app is installed on a booted simulator, run from the repo root:
 
 ```sh
 # all flows
