@@ -60,5 +60,6 @@ struct ToolDetailsToggleFavoriteButton: View {
             RoundedRectangle(cornerRadius: cornerRadius)
                 .stroke(color, lineWidth: 1)
         )
+        .accessibilityIdentifier(AccessibilityStrings.Button.toggleToolFavorite.id)
     }
 }

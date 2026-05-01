@@ -14,12 +14,13 @@ extension UIViewController {
         
         // Frame has to have a size, label can't be hidden, and alpha can't be zero in order to be queried. ~Levi
         
-        let label = UILabel(frame: CGRect(x: -10, y: -10, width: 1, height: 1))
-        label.text = ""
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+        label.text = " "
         label.clipsToBounds = true
         label.isHidden = false
+        label.alpha = 0.01
         label.accessibilityIdentifier = screenAccessibility.id
-        
+
         view.insertSubview(label, at: 0)
     }
 }

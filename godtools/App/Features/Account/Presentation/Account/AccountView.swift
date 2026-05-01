@@ -20,7 +20,9 @@ struct AccountView: View {
     var body: some View {
         
         GeometryReader { geometry in
-               
+
+            AccessibilityScreenElementView(screenAccessibility: .account)
+
             PullToRefreshScrollView(showsIndicators: false) {
                 
                 VStack(alignment: .leading, spacing: 0) {

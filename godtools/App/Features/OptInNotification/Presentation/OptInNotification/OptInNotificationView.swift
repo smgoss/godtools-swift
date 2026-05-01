@@ -28,13 +28,15 @@ struct OptInNotificationView: View {
     }
 
     var body: some View {
-        
+
         GTModalView(content: { geometry in
-            
+
             let contentWidth: CGFloat = geometry.size.width - (modalHorizontalPadding * 2)
-            
+
             VStack(alignment: .center, spacing: 0) {
-                
+
+                AccessibilityScreenElementView(screenAccessibility: .optInNotification)
+
                 ImageCatalog.notificationGraphic
                     .image
                     .resizable()

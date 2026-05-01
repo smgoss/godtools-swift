@@ -23,11 +23,13 @@ struct DeleteAccountProgressView: View {
     var body: some View {
         
         GeometryReader { geometry in
-            
+
+            AccessibilityScreenElementView(screenAccessibility: .deleteAccountProgress)
+
             VStack(alignment: .center, spacing: 0) {
-                
+
                 Spacer()
-                
+
                 Text(viewModel.interfaceStrings.title)
                     .foregroundColor(Color.black)
                     .font(FontLibrary.sfProTextRegular.font(size: 18))

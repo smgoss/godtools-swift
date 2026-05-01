@@ -25,7 +25,9 @@ struct AllYourFavoriteToolsView: View {
     var body: some View {
         
         GeometryReader { geometry in
-                    
+
+            AccessibilityScreenElementView(screenAccessibility: .allYourFavoriteTools)
+
             VStack(alignment: .leading, spacing: 0) {
                 List {
                     Text(viewModel.sectionTitle)

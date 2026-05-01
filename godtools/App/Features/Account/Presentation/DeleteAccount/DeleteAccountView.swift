@@ -27,9 +27,11 @@ struct DeleteAccountView: View {
     var body: some View {
         
         GeometryReader { geometry in
-            
+
+            AccessibilityScreenElementView(screenAccessibility: .deleteAccount)
+
             VStack(alignment: .leading, spacing: 0) {
-                
+
                 FixedVerticalSpacer(height: contentInsets.top)
                 
                 ImageCatalog.loginBackground.image

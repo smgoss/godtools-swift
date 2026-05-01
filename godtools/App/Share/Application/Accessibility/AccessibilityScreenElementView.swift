@@ -25,8 +25,9 @@ struct AccessibilityScreenElementView: View {
     }
     
     var body: some View {
-        Text("")
-            .frame(width: 0, height: 0)
+        Text(verbatim: " ")
+            .frame(width: 1, height: 1)
+            .opacity(0)
             .accessibilityIdentifier(screenAccessibilityId)
     }
 }

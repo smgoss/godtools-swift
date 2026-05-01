@@ -36,7 +36,9 @@ class LessonView: MobileContentRendererView {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("view didload: \(type(of: self))")
-        
+
+        addScreenAccessibility(screenAccessibility: .lesson)
+
         previousPageButton.addTarget(self, action: #selector(previousPageButtonTapped), for: .touchUpInside)
         nextPageButton.addTarget(self, action: #selector(nextPageButtonTapped), for: .touchUpInside)
     }

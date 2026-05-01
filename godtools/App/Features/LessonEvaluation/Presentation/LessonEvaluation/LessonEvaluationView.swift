@@ -25,13 +25,15 @@ struct LessonEvaluationView: View {
     var body: some View {
         
         GeometryReader { geometry in
-         
+
+            AccessibilityScreenElementView(screenAccessibility: .lessonEvaluation)
+
             VStack(alignment: .center, spacing: 0) {
-                
+
                 Spacer()
-                
+
                 VStack(alignment: .center, spacing: 0) {
-                    
+
                     HStack(alignment: .top, spacing: 0) {
                         Spacer()
                         

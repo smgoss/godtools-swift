@@ -18,13 +18,18 @@ struct DownloadToolProgressView: View {
     }
     
     var body: some View {
-        
-        FullScreenDownloadProgressView(
-            downloadMessage: viewModel.message,
-            hidesSpinner: false,
-            downloadProgress: nil,
-            downloadProgressString: nil
-        )
+
+        ZStack {
+
+            AccessibilityScreenElementView(screenAccessibility: .downloadToolProgress)
+
+            FullScreenDownloadProgressView(
+                downloadMessage: viewModel.message,
+                hidesSpinner: false,
+                downloadProgress: nil,
+                downloadProgressString: nil
+            )
+        }
     }
     
     func completeDownloadProgress(completion: @escaping (() -> Void)) {

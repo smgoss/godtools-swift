@@ -20,9 +20,11 @@ struct ToolSettingsToolLanguagesListView: View {
     var body: some View {
         
         GeometryReader { geometry in
-         
+
+            AccessibilityScreenElementView(screenAccessibility: .toolSettingsToolLanguagesList)
+
             VStack(alignment: .leading, spacing: 0) {
-                
+
                 HStack {
                     Spacer()
                     CloseButton {

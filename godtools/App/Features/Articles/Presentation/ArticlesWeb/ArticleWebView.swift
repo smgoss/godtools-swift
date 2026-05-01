@@ -40,10 +40,12 @@ class ArticleWebView: AppViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("view didload: \(type(of: self))")
-            
+
+        addScreenAccessibility(screenAccessibility: .articleWebView)
+
         setupLayout()
         setupBinding()
-        
+
         viewModel.loadWebPage(webView: webView)
     }
     

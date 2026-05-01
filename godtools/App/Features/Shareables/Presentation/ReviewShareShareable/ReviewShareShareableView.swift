@@ -24,9 +24,11 @@ struct ReviewShareShareableView: View {
     var body: some View {
         
         GeometryReader { geometry in
-                        
+
+            AccessibilityScreenElementView(screenAccessibility: .reviewShareShareable)
+
             VStack(alignment: .center, spacing: 0) {
-                
+
                 HStack {
                     Spacer()
                     CloseButton {

@@ -50,17 +50,19 @@ class ToolTrainingView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("view didload: \(type(of: self))")
-        
+
+        addScreenAccessibility(screenAccessibility: .toolTraining)
+
         setViewState(
             viewState: .hidden,
             animationDuration: 0,
             layoutIfNeeded: false,
             completion: nil
         )
-        
+
         setupLayout()
         setupBinding()
-        
+
         viewModel.viewLoaded()
         
         tipPagesNavigationView.setDelegate(delegate: self)

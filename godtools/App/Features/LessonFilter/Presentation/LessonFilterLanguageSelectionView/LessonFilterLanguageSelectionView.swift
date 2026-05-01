@@ -19,9 +19,11 @@ struct LessonFilterLanguageSelectionView: View {
     var body: some View {
         
         VStack(spacing: 0) {
-            
+
+            AccessibilityScreenElementView(screenAccessibility: .lessonFilterLanguageSelection)
+
             SearchBarView(viewModel: viewModel.getSearchBarViewModel(), searchText: $viewModel.searchText)
-            
+
             List {
                 ForEach(viewModel.languageSearchResults) { language in
                     

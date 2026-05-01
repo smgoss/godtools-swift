@@ -18,13 +18,18 @@ struct CreatingToolScreenShareSessionView: View {
     }
     
     var body: some View {
-        
-        FullScreenDownloadProgressView(
-            downloadMessage: viewModel.creatingSessionMessage,
-            hidesSpinner: false,
-            downloadProgress: nil,
-            downloadProgressString: nil
-        )
+
+        ZStack {
+
+            AccessibilityScreenElementView(screenAccessibility: .creatingToolScreenShareSession)
+
+            FullScreenDownloadProgressView(
+                downloadMessage: viewModel.creatingSessionMessage,
+                hidesSpinner: false,
+                downloadProgress: nil,
+                downloadProgressString: nil
+            )
+        }
         .onAppear {
             viewModel.pageViewed()
         }

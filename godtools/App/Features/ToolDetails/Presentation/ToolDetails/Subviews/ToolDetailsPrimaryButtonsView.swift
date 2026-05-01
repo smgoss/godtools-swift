@@ -32,7 +32,8 @@ struct ToolDetailsPrimaryButtonsView: View {
                 fontSize: 17,
                 width: primaryButtonWidth,
                 height: primaryButtonHeight,
-                cornerRadius: primaryButtonCornerRadius
+                cornerRadius: primaryButtonCornerRadius,
+                accessibility: .openTool
             ){
                 viewModel.openToolTapped()
             }

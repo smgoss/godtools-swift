@@ -21,11 +21,13 @@ struct ToolScreenShareQRCodeView: View {
     var body: some View {
 
         GTModalView (content: { geometry in
-            
+
+            AccessibilityScreenElementView(screenAccessibility: .toolScreenShareQRCode)
+
             VStack {
                 HStack {
                     Spacer()
-                    
+
                     CloseButton {
                         viewModel.closeTapped()
                     }

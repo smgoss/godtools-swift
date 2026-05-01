@@ -34,10 +34,12 @@ class ArticlesView: AppViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("view didload: \(type(of: self))")
-        
+
+        addScreenAccessibility(screenAccessibility: .articleList)
+
         setupLayout()
         setupBinding()
-                
+
         articlesTableView.delegate = self
         articlesTableView.dataSource = self
     }

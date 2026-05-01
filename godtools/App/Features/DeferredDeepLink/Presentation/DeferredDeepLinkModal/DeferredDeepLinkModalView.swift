@@ -18,7 +18,9 @@ struct DeferredDeepLinkModalView: View {
     
     var body: some View {
         VStack {
-            
+
+            AccessibilityScreenElementView(screenAccessibility: .deferredDeepLinkModal)
+
             HStack {
                 CloseButton(buttonSize: 13) {
                     viewModel.closeButtonTapped()

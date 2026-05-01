@@ -24,7 +24,9 @@ struct LessonSwipeTutorialView: View {
         
         GeometryReader { geometry in
             ZStack {
-                
+
+                AccessibilityScreenElementView(screenAccessibility: .lessonSwipeTutorial)
+
                 LinearGradient(
                     gradient: Gradient(
                         colors: [topGradientColor, bottomGradientColor]

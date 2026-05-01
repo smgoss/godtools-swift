@@ -29,6 +29,8 @@ class ChooseYourOwnAdventureView: MobileContentRendererView {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("view didload: \(type(of: self))")
+
+        addScreenAccessibility(screenAccessibility: .chooseYourOwnAdventure)
     }
     
     override func setupLayout() {
