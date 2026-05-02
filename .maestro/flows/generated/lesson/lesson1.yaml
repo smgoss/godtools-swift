@@ -10,6 +10,12 @@ tags:
 - runFlow: ../../../helpers/dismiss_onboarding.yaml
 - openLink: "godtools://org.cru.godtools/tool/lesson/lesson1/en"
 - runFlow: ../../../helpers/dismiss_open_app_prompt.yaml
+- runFlow:
+    when:
+      visible:
+        id: "Lesson Swipe Tutorial"
+    commands:
+      - tapOn: "Got it"
 - assertVisible:
     id: "Lesson"
 - assertVisible: "Lesson Testing"

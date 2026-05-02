@@ -3,15 +3,29 @@ name: Favorites - favorite a tool then view all favorites
 tags:
   - favorites
   - smoke
-# After favoriting a tool from the Tool Details screen and tapping back,
-# the app surfaces the Dashboard Favorites tab (not the Tools tab where
-# we entered from), so the View All button is reachable directly.
+# Uses clearState: true to start with no favorites — otherwise the
+# regex tap on `Tool - .+` may hit an already-favorited tool from a
+# prior test, toggling it OFF and producing an empty Favorites tab
+# where View All is not rendered.
 ---
-- runFlow: ../../helpers/launch_to_tool_details.yaml
+- launchApp:
+    clearState: true
+    stopApp: true
+- runFlow: ../../helpers/dismiss_onboarding.yaml
+- openLink: "godtools://org.cru.godtools/dashboard/tools"
+- runFlow: ../../helpers/dismiss_open_app_prompt.yaml
+- assertVisible:
+    id: "Dashboard Tools"
+- tapOn:
+    id: "Tool - .+"
+- assertVisible:
+    id: "Tool Details"
 - tapOn:
     id: "Toggle Tool Favorite"
 - tapOn:
     id: "Tool Details Nav Back"
+- tapOn:
+    id: "Dashboard Tab Favorites"
 - assertVisible:
     id: "Dashboard Favorites"
 - tapOn:

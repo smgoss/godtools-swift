@@ -130,9 +130,15 @@ def emit_flow(resource: dict, translation: dict | None, manifest_pages: list[str
     # Assert the screen id matching the resource type, so a regression that
     # silently routes the deep link elsewhere fails fast instead of hiding
     # behind name-text matches that may overlap across screens.
+    #
+    # For lessons, the swipe-tutorial overlay covers the Lesson screen on
+    # first open (gated by LessonSwipeTutorialViewedRepository in
+    # UserDefaults). Without clearState the overlay only appears once per
+    # install, so dismiss it conditionally and then assert the Lesson
+    # screen below. Asserting "Lesson" directly without dismissing the
+    # overlay hangs the driver until the assertion times out.
     SCREEN_ID_BY_TYPE = {
         "tract": "Tract",
-        "lesson": "Lesson",
         "cyoa": "Choose Your Own Adventure",
         "article": "Articles",
     }
@@ -140,6 +146,15 @@ def emit_flow(resource: dict, translation: dict | None, manifest_pages: list[str
     if screen_id:
         lines.append("- assertVisible:")
         lines.append(f"    id: {json.dumps(screen_id)}")
+    if rtype == "lesson":
+        lines.append("- runFlow:")
+        lines.append("    when:")
+        lines.append("      visible:")
+        lines.append('        id: "Lesson Swipe Tutorial"')
+        lines.append("    commands:")
+        lines.append('      - tapOn: "Got it"')
+        lines.append("- assertVisible:")
+        lines.append('    id: "Lesson"')
 
     # Assert resource title appears - real content
     lines.append(f"- assertVisible: {yaml_str(name)}")

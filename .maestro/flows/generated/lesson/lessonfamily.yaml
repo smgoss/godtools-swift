@@ -10,6 +10,12 @@ tags:
 - runFlow: ../../../helpers/dismiss_onboarding.yaml
 - openLink: "godtools://org.cru.godtools/tool/lesson/lessonfamily/en"
 - runFlow: ../../../helpers/dismiss_open_app_prompt.yaml
+- runFlow:
+    when:
+      visible:
+        id: "Lesson Swipe Tutorial"
+    commands:
+      - tapOn: "Got it"
 - assertVisible:
     id: "Lesson"
 - assertVisible: "How to start spiritual conversations with your family"
