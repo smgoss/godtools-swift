@@ -3,8 +3,30 @@ name: Tool Training - initial screen
 tags:
   - tool_training
   - smoke
+# ToolTraining is reachable via Tool Settings → Training Tips, but only
+# when the underlying tract was opened with `trainingTipsEnabled: true`.
+# Direct deep links default trainingTipsEnabled to false, so navigate
+# via the Learn-To-Share path which sets the flag. The regular tools
+# list (`Tool - .+`) lands on Four Spiritual Laws on staging which
+# does have a Learn To Share button; the Spotlight-Tool path lands on
+# KGP which does not.
 ---
-- runFlow: ../../helpers/launch_to_kgp_tract.yaml
+- runFlow: ../../helpers/launch_to_tool_details.yaml
+- tapOn:
+    id: "Learn To Share"
+- assertVisible:
+    id: "learnToShareTool"
+- repeat:
+    while:
+      visible:
+        id: "Continue"
+    commands:
+      - tapOn:
+          id: "Continue"
+- tapOn:
+    id: "Start Training"
+- assertVisible:
+    id: "Tract"
 - tapOn:
     id: "Tool Settings"
 - assertVisible:

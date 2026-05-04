@@ -7,6 +7,7 @@ tags:
     stopApp: true
 - runFlow: ../../helpers/dismiss_onboarding.yaml
 - openLink: "godtools://org.cru.godtools/dashboard/tools"
+- runFlow: ../../helpers/dismiss_open_app_prompt.yaml
 - assertVisible:
     id: "Dashboard Tools"
 - tapOn:

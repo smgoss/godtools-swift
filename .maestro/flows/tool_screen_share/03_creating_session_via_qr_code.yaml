@@ -1,7 +1,13 @@
 appId: org.cru.godtools.beta
-name: Tool screen share - tutorial → Generate QR Code → creating session
+name: Tool screen share - tutorial → Generate QR Code → QR code screen
 tags:
   - tool_screen_share
+# After Generate QR Code, the app momentarily shows
+# CreatingToolScreenShareSession while the session is being built, then
+# transitions to ToolScreenShareQRCode. The "Creating" screen is too
+# transient to assert against reliably (often gone before the
+# assertion poll finds it). Assert the end-state ToolScreenShareQRCode
+# instead — that's what the user actually sees and interacts with.
 ---
 - runFlow: ../../helpers/launch_to_tract.yaml
 - tapOn:
@@ -22,4 +28,4 @@ tags:
 - tapOn:
     id: "Generate QR Code"
 - assertVisible:
-    id: "Creating Tool Screen Share Session"
+    id: "Tool Screen Share QR Code"
