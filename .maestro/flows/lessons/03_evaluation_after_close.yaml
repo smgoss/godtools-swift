@@ -1,0 +1,36 @@
+appId: org.cru.godtools.beta
+name: Lesson - evaluation modal appears after close
+tags:
+  - lessons
+# LessonEvaluation is presented in the Dashboard flow's
+# closeTappedFromLesson handler when (a) the user has viewed
+# >2 pages of the lesson and (b) the lesson hasn't been evaluated
+# before. The launch_to_lesson helper uses clearState: true so
+# the "evaluated" flag is freshly false. Swipe through pages a
+# few times so highestPageNumberViewed exceeds 2, then close.
+---
+- runFlow: ../../helpers/launch_to_lesson.yaml
+- runFlow:
+    when:
+      visible:
+        id: "Lesson Swipe Tutorial"
+    commands:
+      - tapOn: "Got it"
+- assertVisible:
+    id: "Lesson"
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- swipe:
+    start: 90%, 50%
+    end: 10%, 50%
+- tapOn:
+    id: "Close"
+- assertVisible:
+    id: "Lesson Evaluation"

@@ -1,0 +1,10 @@
+appId: org.cru.godtools.beta
+name: Articles - tap a category to open the article list
+tags:
+  - articles
+---
+- runFlow: ../../helpers/launch_to_articles.yaml
+- tapOn:
+    id: "Article Category"
+- assertVisible:
+    id: "Article List"

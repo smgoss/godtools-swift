@@ -24,11 +24,12 @@ class ArticleCell: UITableViewCell {
     }
     
     func configure(viewModel: ArticleCellViewModel) {
-        
+
         self.viewModel = viewModel
-        
+
         selectionStyle = .none
-        
+        accessibilityIdentifier = AccessibilityStrings.Button.article.id
+
         titleLabel.text = viewModel.title
     }
 }

@@ -1,0 +1,14 @@
+appId: org.cru.godtools.beta
+name: Articles - tap an article to open the web view
+tags:
+  - articles
+---
+- runFlow: ../../helpers/launch_to_articles.yaml
+- tapOn:
+    id: "Article Category"
+- assertVisible:
+    id: "Article List"
+- tapOn:
+    id: "Article"
+- assertVisible:
+    id: "Article Web View"

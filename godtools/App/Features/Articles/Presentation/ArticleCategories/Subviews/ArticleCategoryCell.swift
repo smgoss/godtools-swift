@@ -24,16 +24,17 @@ class ArticleCategoryCell: UITableViewCell {
     }
     
     func configure(viewModel: ArticleCategoryCellViewModel) {
-        
+
         self.viewModel = viewModel
-        
+
         selectionStyle = .none
         backgroundColor = .lightGray
-        
+        accessibilityIdentifier = AccessibilityStrings.Button.articleCategory.id
+
         viewModel.articleImage.addObserver(self) { [weak self] (image: UIImage?) in
             self?.articleImageView.image = image
         }
-        
+
         viewModel.title.addObserver(self) { [weak self] (title: String?) in
             self?.titleLabel.text = title
         }

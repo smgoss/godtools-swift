@@ -77,6 +77,7 @@ class LessonProgressView: UIView {
         shareButton.constrainLeftToView(view: self, constant: 10)
         
         closeButton.setImage(ImageCatalog.navClose.uiImage, for: .normal)
+        closeButton.accessibilityIdentifier = AccessibilityStrings.Button.close.id
         _ = closeButton.addWidthConstraint(constant: 50)
         _ = closeButton.addHeightConstraint(constant: 50)
         closeButton.constrainCenterVerticallyInView(view: self)
