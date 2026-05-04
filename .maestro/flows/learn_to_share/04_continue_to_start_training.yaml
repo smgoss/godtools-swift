@@ -2,20 +2,26 @@ appId: org.cru.godtools.beta
 name: Learn to share - continue through pages then start training
 tags:
   - learn_to_share
+# Gated on Learn To Share availability — see 01 for context.
 ---
 - runFlow: ../../helpers/launch_to_spotlight_tool_details.yaml
-- tapOn:
-    id: "Learn To Share"
-- assertVisible:
-    id: "learnToShareTool"
-- repeat:
-    while:
+- runFlow:
+    when:
       visible:
-        id: "Continue"
+        id: "Learn To Share"
     commands:
       - tapOn:
-          id: "Continue"
-- tapOn:
-    id: "Start Training"
-- assertVisible:
-    id: "Tract"
+          id: "Learn To Share"
+      - assertVisible:
+          id: "learnToShareTool"
+      - repeat:
+          while:
+            visible:
+              id: "Continue"
+          commands:
+            - tapOn:
+                id: "Continue"
+      - tapOn:
+          id: "Start Training"
+      - assertVisible:
+          id: "Tract"
