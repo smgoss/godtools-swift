@@ -1,0 +1,106 @@
+name: Maestro UI Tests
+
+on:
+  push:
+    branches: [ develop, master ]
+  pull_request:
+    branches: [ develop, master, feature/*, releases/* ]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  maestro:
+    runs-on: macos-15
+    timeout-minutes: 60
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Select Xcode and Bundle Install
+        uses: ./.github/actions/bundle-install
+
+      - name: Boot simulator
+        id: sim
+        run: |
+          set -euo pipefail
+          # Pick the first available iPhone-class simulator running iOS 18 or
+          # newer. The runner image's installed runtimes drift, so pinning to
+          # an exact iOS version makes the workflow brittle.
+          UDID=$(xcrun simctl list devices available -j \
+            | jq -r '
+                [.devices | to_entries[]
+                  | select(.key | test("iOS-1[89]|iOS-2[0-9]"))
+                  | .value[]
+                  | select(.name | test("^iPhone 1[5-9]( |$)"))
+                ]
+                | sort_by(.name) | reverse | .[0].udid // empty
+              ')
+          if [[ -z "$UDID" ]]; then
+            echo "No iPhone simulator on iOS 18+ found; available:"
+            xcrun simctl list devices available
+            exit 1
+          fi
+          xcrun simctl shutdown "$UDID" 2>/dev/null || true
+          xcrun simctl erase "$UDID"
+          xcrun simctl boot "$UDID"
+          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+          echo "Booted simulator $UDID"
+          xcrun simctl list devices booted
+
+      - name: Build GodTools-Staging for simulator
+        run: |
+          set -euo pipefail
+          # Specific simulator destination is required — generic destination
+          # builds for x86_64 too, but the GodToolsShared xcframework only
+          # ships ios-arm64-simulator. See .maestro/README.md.
+          xcodebuild \
+            -project godtools.xcodeproj \
+            -scheme GodTools-Staging \
+            -destination "platform=iOS Simulator,id=${{ steps.sim.outputs.udid }}" \
+            -derivedDataPath build \
+            -quiet \
+            build
+          test -d build/Build/Products/Staging-iphonesimulator/godtools.app
+
+      - name: Install app on simulator
+        run: xcrun simctl install ${{ steps.sim.outputs.udid }} build/Build/Products/Staging-iphonesimulator/godtools.app
+
+      - name: Install Maestro
+        run: |
+          curl -fsSL "https://get.maestro.mobile.dev" | bash
+          echo "$HOME/.maestro/bin" >> "$GITHUB_PATH"
+
+      - name: Run Maestro suite
+        # Run the hand-authored flow folders only (not flows/generated, which
+        # depend on the live mobile-content-api catalog and surface upstream
+        # Kotlin parser bugs unrelated to the app).
+        run: |
+          set -euo pipefail
+          maestro test \
+            .maestro/flows/dashboard/ \
+            .maestro/flows/menu/ \
+            .maestro/flows/articles/ \
+            .maestro/flows/choose_your_own_adventure/ \
+            .maestro/flows/lessons/ \
+            .maestro/flows/tool_settings/ \
+            .maestro/flows/tool_training/ \
+            .maestro/flows/favorites/ \
+            .maestro/flows/tool_screen_share/ \
+            .maestro/flows/tool_details/ \
+            .maestro/flows/learn_to_share/ \
+            .maestro/flows/language_settings/ \
+            .maestro/flows/choose_app_language/ \
+            .maestro/flows/onboarding/ \
+            .maestro/flows/shareables/
+
+      - name: Upload Maestro debug artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: maestro-debug
+          path: |
+            ~/.maestro/tests/
+          retention-days: 7
