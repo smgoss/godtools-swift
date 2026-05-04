@@ -1,0 +1,15 @@
+appId: org.cru.godtools.beta
+name: Menu - navigate to share GodTools
+tags:
+  - menu
+# Share GodTools opens an iOS UIActivityViewController (system share
+# sheet) — that view is system-rendered, so we can't tag it with a
+# `screenAccessibility` id. Assert by "Copy", which is the first
+# universal action item every iOS share sheet surfaces (no Cancel
+# button on iOS 18+). The next flow's `launchApp stopApp: true`
+# closes the sheet implicitly.
+---
+- runFlow: ../../helpers/launch_to_menu.yaml
+- tapOn:
+    id: "Share GodTools"
+- assertVisible: "Copy"

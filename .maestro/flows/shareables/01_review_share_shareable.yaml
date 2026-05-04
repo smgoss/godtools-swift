@@ -1,0 +1,25 @@
+appId: org.cru.godtools.beta
+name: Shareables - tap shareable to review
+tags:
+  - shareables
+  - smoke
+# The shareable items section in Tool Settings is populated only when
+# the tool's translation has shareables (images) attached. Tools
+# without shareables hide the section entirely. Wrapped in a `runFlow
+# when` so the flow no-ops on staging when the spotlight tract has no
+# shareables, and exercises the full path otherwise.
+---
+- runFlow: ../../helpers/launch_to_tract.yaml
+- tapOn:
+    id: "Tool Settings"
+- assertVisible:
+    id: "Tool Settings"
+- runFlow:
+    when:
+      visible:
+        id: "Tool Settings Shareable Item"
+    commands:
+      - tapOn:
+          id: "Tool Settings Shareable Item"
+      - assertVisible:
+          id: "Review Share Shareable"

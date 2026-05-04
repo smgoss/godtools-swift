@@ -122,6 +122,7 @@ class AccessibilityStrings {
         case toolSettings = "Tool Settings"
         case toolSettingsPrimaryLanguage = "Tool Settings Primary Language"
         case toolSettingsParallelLanguage = "Tool Settings Parallel Language"
+        case toolSettingsShareableItem = "Tool Settings Shareable Item"
         case trainingTips = "Training Tips"
         case tutorial = "Tutorial"
         case viewAllFavoriteTools = "View All Favorite Tools"

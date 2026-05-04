@@ -46,5 +46,6 @@ struct ToolSettingsShareableItemView: View {
         .onTapGesture {
             tappedClosure?()
         }
+        .accessibilityIdentifier(AccessibilityStrings.Button.toolSettingsShareableItem.id)
     }
 }

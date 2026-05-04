@@ -1,0 +1,18 @@
+appId: org.cru.godtools.beta
+name: Tool Settings - Share Link opens system share sheet
+tags:
+  - tool_settings
+# Share Link from Tool Settings opens an iOS UIActivityViewController
+# wrapping the tool URL. The share sheet is system-rendered and can't
+# host a screenAccessibility id, so assert by "Copy" — the first
+# universal action item every iOS share sheet surfaces. Same pattern
+# as menu/13_navigate_to_share_godtools.
+---
+- runFlow: ../../helpers/launch_to_tract.yaml
+- tapOn:
+    id: "Tool Settings"
+- assertVisible:
+    id: "Tool Settings"
+- tapOn:
+    id: "Share Link"
+- assertVisible: "Copy"
