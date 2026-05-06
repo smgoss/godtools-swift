@@ -1,0 +1,14 @@
+appId: org.cru.godtools.beta
+name: Dashboard - lessons language filter pick a language and apply
+tags:
+  - dashboard
+---
+- runFlow: ../../helpers/launch_to_dashboard_lessons.yaml
+- tapOn:
+    id: "Lessons Language Filter"
+- assertVisible:
+    id: "Lesson Filter Language Selection"
+- tapOn:
+    id: "Lessons Language Filter Item"
+- assertVisible:
+    id: "Dashboard Lessons"

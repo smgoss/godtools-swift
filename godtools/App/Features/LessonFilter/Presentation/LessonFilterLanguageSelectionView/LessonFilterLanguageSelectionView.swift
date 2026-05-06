@@ -26,18 +26,19 @@ struct LessonFilterLanguageSelectionView: View {
 
             List {
                 ForEach(viewModel.languageSearchResults) { language in
-                    
+
                     Button {
-                        
+
                         viewModel.languageTapped(language)
-                        
+
                     } label: {
-                        
+
                         LessonFilterLanguageSelectionRowView(
                             language: language,
                             isSelected: viewModel.selectedLanguage?.id == language.id
                         )
                     }
+                    .accessibilityIdentifier(AccessibilityStrings.Button.lessonsLanguageFilterItem.id)
                 }
             }
             .listStyle(.inset)

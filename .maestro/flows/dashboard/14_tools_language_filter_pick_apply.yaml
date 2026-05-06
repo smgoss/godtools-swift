@@ -1,0 +1,14 @@
+appId: org.cru.godtools.beta
+name: Dashboard - tools language filter pick a language and apply
+tags:
+  - dashboard
+---
+- runFlow: ../../helpers/launch_to_dashboard_tools.yaml
+- tapOn:
+    id: "Tools Language Filter"
+- assertVisible:
+    id: "Tools Language Filters"
+- tapOn:
+    id: "Tools Language Filter Item"
+- assertVisible:
+    id: "Dashboard Tools"

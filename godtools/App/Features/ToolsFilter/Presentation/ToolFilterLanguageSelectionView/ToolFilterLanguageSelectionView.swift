@@ -31,16 +31,17 @@ struct ToolFilterLanguageSelectionView: View {
                 ForEach(viewModel.languageSearchResults, id: \.filterId) { language in
                     
                     Button {
-                        
+
                         viewModel.rowTapped(with: language)
-                        
+
                     } label: {
-                        
+
                         ToolFilterLanguageSelectionRowView(
                             language: language,
                             isSelected: viewModel.selectedLanguage.id == language.id
                         )
                     }
+                    .accessibilityIdentifier(AccessibilityStrings.Button.toolsLanguageFilterItem.id)
                 }
             }
             .listStyle(.inset)

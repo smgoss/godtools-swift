@@ -31,16 +31,17 @@ struct ToolFilterCategorySelectionView: View {
                 ForEach(viewModel.categorySearchResults, id: \.filterId) { category in
                     
                     Button {
-                        
+
                         viewModel.rowTapped(with: category)
-                        
+
                     } label: {
-                        
+
                         ToolFilterCategorySelectionRowView(
                             category: category,
                             isSelected: viewModel.selectedCategory.id == category.id
                         )
                     }
+                    .accessibilityIdentifier(AccessibilityStrings.Button.toolsCategoryFilterItem.id)
                 }
             }
             .listStyle(.inset)
