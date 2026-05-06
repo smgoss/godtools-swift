@@ -1,0 +1,22 @@
+appId: org.cru.godtools.beta
+name: Onboarding - tap Get Started lands on Dashboard Favorites
+tags:
+  - onboarding
+# E2E onboarding completion — continue through every page until
+# the Get Started button surfaces, then tap it and assert we
+# arrive on Dashboard Favorites (the default dashboard tab).
+---
+- runFlow: ../../helpers/launch_to_onboarding.yaml
+- repeat:
+    while:
+      visible:
+        id: "Continue"
+    commands:
+      - tapOn:
+          id: "Continue"
+- assertVisible:
+    id: "Get Started"
+- tapOn:
+    id: "Get Started"
+- assertVisible:
+    id: "Dashboard Favorites"
